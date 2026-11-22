@@ -1,0 +1,11 @@
+# Floor Level Configuration
+# Request
+string floor_id # "Floor_1" / "Floor_2"
+---
+
+# Response
+bool success # true if map loaded
+string info # map infos
+float32 initial_x # [m]
+float32 initial_y # [m]
+float32 initial_phi # [rad]

@@ -1,0 +1,28 @@
+# Operational Execution
+
+# Goal
+uint8 MODE_MAP_ONLY=0 # explore/map without cleaning
+uint8 MODE_CLEAN_EXISTING_MAP=1 # clean with pre-loaded map
+uint8 MODE_SLAM_AND_CLEAN=2 # both clean and update map
+uint8 mode
+
+uint8 POWER_ECO=0
+uint8 POWER_STANDARD=1
+uint8 POWER_TURBO=2
+uint8 power_mode
+---
+
+#Result
+uint8 COMPLETED=0
+uint8 CANCELED=1
+uint8 ABORTED=2 
+uint8 completion_mode
+
+float32 total_area_cleaned # [m²]
+float32 elapsed_time # [s]
+---
+
+# Feedback
+string current_room # Living Room, Kitchen ect.
+float32 completion_percentage # 0-100#
+float32 battery_level # %

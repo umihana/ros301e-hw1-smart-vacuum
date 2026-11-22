@@ -1,0 +1,16 @@
+<launch>
+  <!-- argument: can be overridden on the command line -->
+  <arg name="publish_rate" default="1.0" description="Telemetry rate of /vacuum/status in Hz"/>
+
+  <node pkg="smart_vacuum" exec="hardware_driver_node" name="hardware_driver_node" output="screen">
+    <param name="publish_rate" value="$(var publish_rate)"/>
+    <param name="initial_battery" value="100.0"/>
+  </node>
+
+  <node pkg="smart_vacuum" exec="map_loader_node" name="map_loader_node" output="screen"/>
+
+  <node pkg="smart_vacuum" exec="task_manager_node" name="task_manager_node" output="screen">
+    <param name="feedback_period" value="0.5"/>
+    <param name="min_battery" value="15.0"/>
+  </node>
+</launch>
